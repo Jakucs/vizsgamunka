@@ -1,0 +1,48 @@
+CREATE TABLE felhasznalok (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nev VARCHAR(100) NOT NULL,
+    email VARCHAR(150) UNIQUE NOT NULL,
+    jelszo VARCHAR(255) NOT NULL,
+    telefonszam VARCHAR(20),
+    cim TEXT,
+    regisztracio_datum DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+
+CREATE TABLE termekek (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+    	nev VARCHAR(100) NOT NULL,
+    	leiras TEXT,
+    	ar DECIMAL(10, 2) NOT NULL,
+    	keszlet INT NOT NULL,
+);
+
+
+
+CREATE TABLE rendelesek(
+	id INT AUTO_INCREMENT PRIMARY KEY,
+    	felhasznalo_id INT NOT NULL,
+    	rendeles_datum DATETIME DEFAULT CURRENT_TIMESTAMP,
+    	osszeg DECIMAL(10, 2) NOT NULL,
+    	FOREIGN KEY (felhasznalo_id) REFERENCES termekek(id)
+);
+
+
+CREATE TABLE rendeles_tetelek (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+    	rendeles_id INT NOT NULL,
+    	termek_id INT NOT NULL,
+    	mennyiseg INT NOT NULL,
+    	egysegar DECIMAL(10, 2) NOT NULL,
+    	FOREIGN KEY (rendeles_id) REFERENCES rendelesek(id),
+    	FOREIGN KEY (termek_id) REFERENCES termekek(id)
+)
+
+
+CREATE TABLE kedvencek(
+	id INT AUTO_INCREMENT PRIMARY KEY,
+    	felhasznalo_id INT NOT NULL,
+    	termek_id INT NOT NULL,
+    	FOREIGN KEY (felhasznalo_id) REFERENCES felhasznalok(id),
+    	FOREIGN KEY (termek_id) REFERENCES felhasznalok(id)
+);
