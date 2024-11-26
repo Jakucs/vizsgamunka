@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <!-- FONTAWESOME ikonok cdn import -->
+    <!-- Esetleg ezt lehetne később frissíteni -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <!-- NAVBAR KEZDETE --> <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    <nav class = "navbar navbar-expand-lg navbar-light bg-white py-4 fixed-top">
+        <div class="container">
+            <a class = "navbar-brand d-flex justify-content-between align-items-center order-lg-0" href = "index.html">
+                <img src = "../images/bevasarlasikon.png" alt = "weboldal ikon">
+                <span class="text-uppercase fw-lighter ms-2">Bogárkám</span>
+            </a>
+
+            <!--nav-btns -re ne legyen érvényes a btn osztályokra meghatározott stílusbeállítás-->
+            <div class="order-lg-2 nav-btns"> <!--csak 992px-nél nagyobb képernyő esetén érvényesül-->
+                <!--order-lg-2 -vel azt mondjuk, hogy a többi order-el jelölt elemhez képest a 2. azaz második helyen helyezkedjen el-->
+                <button type="button" class="btn position-relative">
+                    <i class="fa fa-shopping-cart"></i> <!--FONT AWESOME ELEM-->
+                    <span class="position-absolute top-0 start-100 translate-middle badge bg-primary">0</span>
+                </button>
+                <button type="button" class="btn position-relative">
+                    <i class="fa fa-heart"></i> <!--FONT AWESOME ELEM-->
+                    <span class="position-absolute top-0 start-100 translate-middle badge bg-primary">0</span>
+                </button>
+                <button type="button" class="btn position-relative">
+                    <i class="fa fa-search"></i> <!--FONT AWESOME ELEM-->
+                </button>
+            </div>
+
+            <button class = "navbar-toggler border-0" type = "button" data-bs-toggle = "collapse" data-bs-target = "#navMenu"> <!--hamburger ikon létrehozása és hivatkozás egy div-re-->
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class = "collapse navbar-collapse order-lg-1" id="navMenu">
+                <ul class="navbar-nav mx-auto text-center">
+                    <li class="nav-item px-2 py-2">
+                        <a class = "nav-link text-uppercase text-dark" href="#header">főoldal</a>
+                    </li>
+                    <li class="nav-item px-2 py-2">
+                        <a class = "nav-link text-uppercase text-dark" href="#collection">ajánlataink</a>
+                    </li>
+                    <li class="nav-item px-2 py-2">
+                        <a class = "nav-link text-uppercase text-dark" href="#special">speciális</a>
+                    </li>
+                    <li class="nav-item px-2 py-2">
+                        <a class = "nav-link text-uppercase text-dark" href="#products">termékről</a>
+                    </li>
+                    <li class="nav-item px-2 py-2">
+                        <a class = "nav-link text-uppercase text-dark" href="#about">rólunk</a>
+                    </li>
+                    <li class="nav-item px-2 py-2 border-0">
+                        <a class = "nav-link text-uppercase text-dark" href="#popular">népszerű</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!--BEJELENTKEZÉS/REGISZTRÁCIÓ--> <!-------------------------------------------------------------------------------------------------------------------------------->
+        <button type="button" class="btn btn-primary ml-auto belepesgomb" data-bs-toggle="modal" data-bs-target="#exampleModal" id="belepesGomb">
+            Belépés
+          </button>
+        <!--POP-UP ABLAK:-->
+        <!-- BOOTSTRAP-ES USER LOGIN POPUP ABLAK (MODAL) -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-body">
+                <h5 class="modal-title" id="exampleModalLabel">Belépés</h5>
+                <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Felhasználónév vagy email cím:</label>
+                <input type="email" class="form-control" id="exampleInputEmail1">
+                </div>
+                
+                <hr>
+                
+                <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Jelszó:</label>
+                <input type="password" class="form-control" id="exampleInputPassword1">
+                <div id="emailHelp" class="form-text">Az adataidat soha nem osztjuk meg mással.</div>
+                </div>
+            </div>
+
+
+            <!--google bejelentkezést kéne-->
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" id="regisztracioMegnyitas">Regisztráció</button>
+                <button type="button" class="btn btn-primary">Belépés</button>
+            </div>
+            </div>
+        </div>
+        </div>
+        <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalToggleLabel2">Regisztráció</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                <label for="exampleInputEmail2" class="form-label">Email cím:</label>
+                <input type="email" class="form-control" id="exampleInputEmail2">
+                <div id="emailHelp2" class="form-text">Kérlek valós email címet adj meg.</div>
+                </div>
+                <div class="mb-3">
+                <label for="exampleInputPassword2" class="form-label">Jelszó:</label>
+                <input type="password" class="form-control" id="exampleInputPassword2">
+                <div id="password2" class="form-text">Érdemes nagybetűket és számokat is használni.</div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" id="submitRegistration">Regisztráció</button> <!--ITT HOZZÁADTAM A  id="submitRegistration" ID-T HOGY TUDJAK HIVATKOZNI MAJD A JS-BEN-->
+            </div>
+            </div>
+        </div>
+        </div>
+        <!--Bejelentkezés vége--> <!--------------------------------------------------------------------------------------------------------------------------------------->
+
+        <!--NYELV VÁLASZTÁS DROPDOWN MENÜ-->
+        <div class="btn-group">
+            <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="margin-right: 20px; margin-left: 20px; padding-left: 20px; padding-right: 20px;">
+              HU
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end" style="min-width: 50%;">
+              <li><a class="dropdown-item" href="#">EN</a></li>
+              <li><a class="dropdown-item" href="#">HU</a></li>
+            </ul>
+        </div>
+         <!--nyelv választás dropdown menü VÉGE-->
+         <div id="header-overlay" class="header-overlay"></div> <!--header részen a bootstrapes overlayt megoldani külön kaland volt.....-->
+    </nav>
+    <!-- navbar vége --> <!------------------------------------------------------------------------------------------------------------------------------------------------>
+    
+        <!-- HEADER --> <!------------------------------------------------------------------------------------------------------------------------------------------------>
+        <header id="header" class = "vh-100 carousel slide" data-bs-ride = "carousel" style="padding-top: 104px;">
+            <div class="container h-100 d-flex align-items-center carousel-inner">
+                <div class="text-center carousel-item active">
+                    <h2 class="text-capitalize text-white">Egyél ízesített bogarakat!</h2>
+                    <h1 class="text-uppercase py-2 fw-bold text-white">Minden falat egy új élmény</h1>
+                    <a href="#" class="btn mt-3 text-uppercase">Vásárlás most</a>
+                </div>
+                <div class="text-center carousel-item">
+                    <h2 class="text-capitalize text-white">Legjobb ár & termék!</h2>
+                    <h1 class="text-uppercase py-2 fw-bold text-white">Próbáld ki legújabb ízesítéseinket!</h1>
+                    <a href="#" class="btn mt-3 text-uppercase">Vásárlás most</a>
+                </div>
+                <div class="text-center carousel-item">
+                    <h2 class="text-capitalize text-white">Egyenesen a termelőtől!</h2>
+                    <h1 class="text-uppercase py-2 fw-bold text-white">Fedezd fel az egyedülálló ízeket</h1>
+                    <a href="#" class="btn mt-3 text-uppercase">Vásárlás most</a>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#header" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#header" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </header>
+        <!-- header vége --> <!------------------------------------------------------------------------------------------------------------------------------------------------>
+        
+        <!--Popper cdn: -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+        <script type="module" src="bootstrap.js"></script>
+        <script src="app.js"></script>
+</body>
+</html>
