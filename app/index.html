@@ -75,6 +75,7 @@
             <div class="modal-body">
                 <h5 class="modal-title" id="exampleModalLabel">Belépés</h5>
                 <div class="mb-3">
+                    <hr>
                 <label for="exampleInputEmail1" class="form-label">Felhasználónév vagy email cím:</label>
                 <input type="email" class="form-control" id="exampleInputEmail1">
                 </div>
@@ -92,37 +93,61 @@
             <!--google bejelentkezést kéne-->
 
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" id="regisztracioMegnyitas">Regisztráció</button>
+                <button type="button" class="btn btn-secondary" data-bs-target="#exampleModal2" data-bs-toggle="modal" data-bs-whatever="@mdo" id="regisztracioMegnyitas">Regisztráció</button>
                 <button type="button" class="btn btn-primary">Belépés</button>
             </div>
             </div>
         </div>
         </div>
-        <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1" data-bs-backdrop="static">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalToggleLabel2">Regisztráció</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="mb-3">
-                <label for="exampleInputEmail2" class="form-label">Email cím:</label>
-                <input type="email" class="form-control" id="exampleInputEmail2">
-                <div id="emailHelp2" class="form-text">Kérlek valós email címet adj meg.</div>
+        <!--REGISZTRÁCIÓS ŰRLAP MODAL  ::::::::::::::::::::::::::::::::::::::::::-->
+        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title fs-5" id="exampleModalLabel">Regisztráció</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="mb-3">
-                <label for="exampleInputPassword2" class="form-label">Jelszó:</label>
-                <input type="password" class="form-control" id="exampleInputPassword2">
-                <div id="password2" class="form-text">Érdemes nagybetűket és számokat is használni.</div>
+                <div class="modal-body">
+                  <form>
+                    <div class="mb-3">
+                      <label for="nameRegistration" class="col-form-label">Teljes név:</label>
+                      <input type="text" class="form-control" id="nameRegistration">
+                      <div id="passwordRegistrationDiv" class="form-text">Ügyelj a helyesírásra.</div>
+                    </div>
+                    <hr>
+                    <div class="mb-3">
+                      <label for="emailRegistration" class="col-form-label">Email cím:</label>
+                      <input type="text" class="form-control" id="emailRegistration">
+                      <div id="emailRegistrationDiv" class="form-text">Kérlek valós email címet adj meg.</div>
+                    </div>
+                    <hr>
+                    <div class="mb-3">
+                      <label for="passwordRegistration" class="col-form-label">Jelszó:</label>
+                      <input type="text" class="form-control" id="passwordRegistration">
+                      <div id="passwordRegistrationDiv" class="form-text">Érdemes nagybetűket és számokat is használni.</div>
+                    </div>
+                    <hr>
+                    <div class="mb-3">
+                      <label for="phoneRegistration" class="col-form-label">Telefonszám:</label>
+                      <input type="text" class="form-control" id="phoneRegistration">
+                      <div id="phoneRegistrationDiv" class="form-text">Ügyelj a helyes hívókörzetre! (+36)</div>
+                    </div>
+                    <hr>
+                    <div class="mb-3">
+                      <label for="addressRegistration" class="col-form-label">Pontos cím:</label>
+                      <input type="text" class="form-control" id="addressRegistration">
+                      <div id="addressRegistrationDiv" class="form-text">Kérlek add meg a szállítási címet.</div>
+                    </div>
+                  </form>
                 </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary">Regisztráció</button>
+                </div>
+              </div>
             </div>
-            <div class="modal-footer">
-                <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" id="submitRegistration">Regisztráció</button> <!--ITT HOZZÁADTAM A  id="submitRegistration" ID-T HOGY TUDJAK HIVATKOZNI MAJD A JS-BEN-->
-            </div>
-            </div>
-        </div>
-        </div>
+          </div>
+        
+        <!--IDÁIG BEZÁRÓLAG :::::::::::::::::::::::::::::::::::::::::::-->
         <!--Bejelentkezés vége--> <!--------------------------------------------------------------------------------------------------------------------------------------->
 
         <!--NYELV VÁLASZTÁS DROPDOWN MENÜ-->
@@ -170,7 +195,9 @@
         
         <!--Popper cdn: -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+        <!--Bootstrap helyi-->
         <script type="module" src="bootstrap.js"></script>
+        <!--egyéb-->
         <script src="app.js"></script>
 </body>
 </html>
